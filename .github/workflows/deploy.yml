@@ -21,6 +21,9 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           port: 22
           script: |
+            cd ~
+            rm -rf react-ec2
+            git clone https://github.com/piyushpc84/react-ec2.git
             cd react-ec2
             docker stop react-app || true
             docker rm react-app || true
